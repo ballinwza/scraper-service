@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: scraper-service
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    restart: unless-stopped

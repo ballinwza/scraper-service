@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package helloworld.v1;
+
+option go_package = "github.com/ballinwza/scraper-service/internal/delivery/proto/v1;gen_grpc";
+// HelloService คือ gRPC Service สำหรับส่งคำทักทาย
+service GreeterService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+// HelloRequest คือโครงสร้างข้อมูลคำร้องขอ
+message HelloRequest {
+  string name = 1;
+}
+
+// HelloResponse คือโครงสร้างข้อมูลคำตอบรับ
+message HelloResponse {
+  string message = 1;
+  int64 timestamp = 2;
+}
