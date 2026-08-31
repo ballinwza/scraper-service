@@ -18,7 +18,7 @@ func main() {
 	}
 	log.Printf("⚙️ App initialized in [%s] mode", cfg.Environment)
 
-	serverAddr := fmt.Sprintf("0.0.0.0:%s", cfg.Port)
+	serverAddr := fmt.Sprintf(":%s", cfg.Port)
 
 	// Start Service
 	lis, err := net.Listen("tcp", serverAddr)
